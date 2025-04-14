@@ -76,6 +76,7 @@
     .museum-card img {
       height: 220px;
       object-fit: cover;
+      cursor: pointer;
     }
 
     .card-title {
@@ -143,7 +144,7 @@
     <div class="row g-4 justify-content-center">
       <div class="col-md-4">
         <div class="card museum-card">
-          <img src="/images/India_national_museum_01.jpg" class="card-img-top" alt="National Museum, Delhi">
+          <img src="/images/India_national_museum_01.jpg" class="card-img-top museum-img" alt="National Museum, Delhi" data-url="https://en.wikipedia.org/wiki/National_Museum,_New_Delhi">
           <div class="card-body">
             <h5 class="card-title">National Museum, Delhi</h5>
             <p class="card-text">Explore India's rich history, from ancient to modern times.</p>
@@ -154,7 +155,7 @@
 
       <div class="col-md-4">
         <div class="card museum-card">
-          <img src="/images/chhatrapati shivaji maharaj museum.jpeg" class="card-img-top" alt="CSMVS, Mumbai">
+          <img src="/images/chhatrapati shivaji maharaj museum.jpeg" class="card-img-top museum-img" alt="CSMVS, Mumbai" data-url="https://en.wikipedia.org/wiki/Chhatrapati_Shivaji_Maharaj_Vastu_Sangrahalaya">
           <div class="card-body">
             <h5 class="card-title">CSMVS, Mumbai</h5>
             <p class="card-text">A heritage museum showcasing India's cultural treasures.</p>
@@ -165,7 +166,7 @@
 
       <div class="col-md-4">
         <div class="card museum-card">
-          <img src="/images/indian mesum.jpeg" class="card-img-top" alt="Indian Museum, Kolkata">
+          <img src="/images/indian mesum.jpeg" class="card-img-top museum-img" alt="Indian Museum, Kolkata" data-url="https://en.wikipedia.org/wiki/Indian_Museum">
           <div class="card-body">
             <h5 class="card-title">Indian Museum, Kolkata</h5>
             <p class="card-text">India's oldest museum with stunning artifacts and fossils.</p>
@@ -176,7 +177,7 @@
 
       <div class="col-md-4">
         <div class="card museum-card">
-          <img src="/images/victoria memorial.jpg" class="card-img-top" alt="Victoria Memorial">
+          <img src="/images/victoria memorial.jpg" class="card-img-top museum-img" alt="Victoria Memorial" data-url="https://en.wikipedia.org/wiki/Victoria_Memorial,_Kolkata">
           <div class="card-body">
             <h5 class="card-title">Victoria Memorial, Kolkata</h5>
             <p class="card-text">Iconic white marble museum dedicated to Queen Victoria.</p>
@@ -187,7 +188,7 @@
 
       <div class="col-md-4">
         <div class="card museum-card">
-          <img src="/images/albert hall.jpg" class="card-img-top" alt="Albert Hall, Jaipur">
+          <img src="/images/albert hall.jpg" class="card-img-top museum-img" alt="Albert Hall, Jaipur" data-url="https://en.wikipedia.org/wiki/Albert_Hall_Museum">
           <div class="card-body">
             <h5 class="card-title">Albert Hall, Jaipur</h5>
             <p class="card-text">Showcases Indo-Saracenic architecture and rare collections.</p>
@@ -202,6 +203,18 @@
   <a href="chatbot.html" class="chat-icon" title="Chat with Assistant">
     <i class="fas fa-robot"></i>
   </a>
+
+  <!-- JavaScript to open Wikipedia link on image click -->
+  <script>
+    document.querySelectorAll('.museum-img').forEach(img => {
+      img.addEventListener('click', () => {
+        const url = img.getAttribute('data-url');
+        if (url) {
+          window.open(url, '_blank');
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
